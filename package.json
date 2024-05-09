@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Katherine-Be/Project_Two_First_Name/issues"
   },
-  "homepage": "https://github.com/Katherine-Be/Project_Two_First_Name#readme"
+  "homepage": "https://github.com/Katherine-Be/Project_Two_First_Name#readme",
+  "dependencies": {
+    "request-promise": "^4.2.6"
+  }
 }
