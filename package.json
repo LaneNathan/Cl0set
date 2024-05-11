@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Katherine-Be/Project_Two_First_Name#readme",
   "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "mysql2": "^3.9.7",
     "puppeteer": "^22.8.0",
     "request-promise": "^4.2.6"
   }
