@@ -15,7 +15,7 @@ const options = {
   method: 'GET',
   url: 'https://asos-com1.p.rapidapi.com/products/search',
   params: {
-    q: 'shearling jacket'
+    q: search
   },
   headers: {
     'X-RapidAPI-Key': asosApiKey,
