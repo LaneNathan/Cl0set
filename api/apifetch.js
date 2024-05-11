@@ -11,7 +11,6 @@ let search = '';
 
 const asos = async ()=>{
 const options = {
-   
   method: 'GET',
   url: 'https://asos-com1.p.rapidapi.com/products/search',
   params: {
@@ -36,10 +35,9 @@ axios.request(options)
     method: 'GET',
     url: 'https://apidojo-forever21-v1.p.rapidapi.com/products/search',
     params: {
-      query: 'jackets',
-      rows: '60',
+      query: search,
+      rows: '10',
       start: '0',
-      color_groups: 'black'
     },
     headers: {
       'X-RapidAPI-Key': forever21ApiKey,
