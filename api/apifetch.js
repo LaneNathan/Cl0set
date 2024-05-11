@@ -6,6 +6,8 @@ const asosApiKey = process.env.RAPIDAPI_KEY;
 const asosApiHost = process.env.RAPIDAPI_HOST;
 const forever21ApiKey = process.env.FOREVER21_API_KEY;
 const forever21ApiHost = process.env.FOREVER21_API_HOST;
+let search = '';
+
 
 const asos = async ()=>{
 const options = {
