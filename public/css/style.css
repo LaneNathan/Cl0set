@@ -1,7 +1,7 @@
 
 body {
     height:100vh;
-    background-image: url("/public/images/closet_background.jpg"); /*href="https://www.vecteezy.com/free-photos/space">Space Stock photos by Vecteezy*/
+    background-image: url("../images/closet_background.jpg"); /*href="https://www.vecteezy.com/free-photos/space">Space Stock photos by Vecteezy*/
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     background-origin: content-box;
@@ -12,5 +12,12 @@ body {
     z-index: 10;
     height: 100vh;
     overflow-y: auto;
+    background-color: black !important;
+}
 
+#scrollPictures-left, #scrollPictures-right {
+    z-index: 10;
+    height: 100vh;
+    overflow-y: auto;
+    /* background-color: black !important; */
 }
