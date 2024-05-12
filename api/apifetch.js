@@ -6,14 +6,15 @@ const asosApiKey = process.env.RAPIDAPI_KEY;
 const asosApiHost = process.env.RAPIDAPI_HOST;
 const forever21ApiKey = process.env.FOREVER21_API_KEY;
 const forever21ApiHost = process.env.FOREVER21_API_HOST;
+let search = '';
+
 
 const asos = async ()=>{
 const options = {
-   
   method: 'GET',
   url: 'https://asos-com1.p.rapidapi.com/products/search',
   params: {
-    q: 'shearling jacket'
+    q: search
   },
   headers: {
     'X-RapidAPI-Key': asosApiKey,
@@ -34,10 +35,9 @@ axios.request(options)
     method: 'GET',
     url: 'https://apidojo-forever21-v1.p.rapidapi.com/products/search',
     params: {
-      query: 'jackets',
-      rows: '60',
+      query: search,
+      rows: '10',
       start: '0',
-      color_groups: 'black'
     },
     headers: {
       'X-RapidAPI-Key': forever21ApiKey,
