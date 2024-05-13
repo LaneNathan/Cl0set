@@ -1,3 +1,5 @@
+use userInventory_db
+
 INSERT INTO shoes (id, color, style)
 VALUES
     ( 001, "blue", "flat"),

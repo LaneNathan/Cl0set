@@ -18,13 +18,15 @@
   },
   "homepage": "https://github.com/Katherine-Be/Project_Two_First_Name#readme",
   "dependencies": {
-
     "axios": "^1.6.8",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
     "mysql2": "^3.9.7",
-
     "puppeteer": "^22.8.0",
-    "request-promise": "^4.2.6"
+    "request-promise": "^4.2.6",
+    "sequelize": "^6.37.3"
   }
 }
