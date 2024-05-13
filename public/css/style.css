@@ -8,19 +8,16 @@ body {
     z-index: 0;
 };
 
-nav  {
-    height:20vh;
-}
-
 .scrollPictures {
     z-index: 10;
-    height: 80vh;
+    height: 100vh;
     overflow-y: auto;
+    background-color: black !important;
 }
 
 #scrollPictures-left, #scrollPictures-right {
     z-index: 10;
-    height: 80vh;
+    height: 100vh;
     overflow-y: auto;
     /* background-color: black !important; */
 }
