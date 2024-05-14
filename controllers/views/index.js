@@ -1,15 +1,30 @@
 const router = require("express").Router();
+const axios = require('axios');
+const { response, query } = require("express");
 
-router.get("/", (req, res) => {
-    // we COULD make the API request for data in our ROUTE/CONTROLLER
+router.get("/", async (req, res) => {
 
-    // we can parse that returned data (images, title)
+let search = 'mens-shirts';
+ 
+  try{
 
-    // we can SEND the DATA in the CONTEXT OBJECT with the VIEW
+    //parse that returned data (images, title)
+   //const asosData = await fetchAsosData(search);
+    const forever21Data = await FetchForever21Data(search);
 
-    let data = { title: "Bingo", username: "Bob" }
-    res.render("homepage", { viewData: data })
-})
+    
+    //console.log('forever21Data', forever21Data.response.docs[0]);
+    console.log('21Data', forever21Data.response);
+
+ // SEND the DATA in the CONTEXT OBJECT with the VIEW
+    res.render("homepage", { forever21Data })
+
+
+  }catch(error){
+    console.error("Error fetching data:",error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 router.get("/login", (req, res) => {
    
