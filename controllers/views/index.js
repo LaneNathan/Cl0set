@@ -7,8 +7,8 @@ router.get("/", (req, res) => {
 
     // we can SEND the DATA in the CONTEXT OBJECT with the VIEW
 
-    let data = { title: "Bingo", username: "Bob" }
-    res.render("homepage", { viewData: data })
+    // let data = { title: "Bingo", username: "Bob" }
+    // res.render("homepage", { viewData: data })
 })
 
 router.get("/login", (req, res) => {
@@ -16,5 +16,9 @@ router.get("/login", (req, res) => {
     res.render("login")
 })
 
+router.get("/createoutfit", (req, res) => {
+   
+    res.render("createoutfit")
+})
 
 module.exports = router;
