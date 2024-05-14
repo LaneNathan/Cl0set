@@ -36,14 +36,21 @@
     </div>
 
     <aside  id="scrollPictures-right"  class="col-2 overflow-auto scrollPictures">
+      
+       <ul>
+        {{#each forever21Data.response.docs}}
+        <li>
+            <div>{{title}}</div>
+
+            <img src="{{thumb_image}}" />
+
+        </li>
+        {{/each}}
+       </ul>
 
     </aside>
 
 
-    {{!-- <div class="test">
-        <h2>Title: {{ viewData.title }}</h2>
-    </div> --}}
+
 </div>
 
-
-<!--<script src="./js/dataFetch.js"></script> -->
