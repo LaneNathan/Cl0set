@@ -12,6 +12,7 @@ let search = 'mens-shirts';
    //const asosData = await fetchAsosData(search);
     const forever21Data = await FetchForever21Data(search);
 
+
     
     //console.log('forever21Data', forever21Data.response.docs[0]);
     console.log('21Data', forever21Data.response);
@@ -25,6 +26,7 @@ let search = 'mens-shirts';
     res.status(500).send("Internal Server Error");
   }
 });
+
 
 router.get("/login", (req, res) => {
    
@@ -70,5 +72,11 @@ async function FetchForever21Data(search){
     console.log(response.data);
     return response.data;
 }
+
+router.get("/createoutfit", (req, res) => {
+   
+    res.render("createoutfit")
+})
+
 
 module.exports = router;
