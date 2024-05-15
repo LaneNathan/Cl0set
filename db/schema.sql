@@ -12,19 +12,3 @@ CREATE TABLE shoes (
 
 
 
--- Create a database if it doesn't exist
-CREATE DATABASE IF NOT EXISTS user_db;
-
--- Use the created database
-USE user_db;
-
--- Create a users table
-CREATE TABLE IF NOT EXISTS users (
-    id UUID PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
