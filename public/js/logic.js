@@ -2,6 +2,7 @@ const saveButton = document.getElementById('save-bttn');
 const moveableImage = document.getElementById('{{pid}}');
 const targetArea = document.getElementById('saveshirt');
 
+//save information from save button click as an object
 saveButton.addEventListener('click', function(event) {
     // Get the data you want to save (for example, from an input field)
 
@@ -22,26 +23,26 @@ saveButton.addEventListener('click', function(event) {
     alert('Your outfit has been saved!');
 });
 
+//controls image dragging
+let isDragging = false;
+let offsetX, offsetY;
 
-addShirtButtonArray.map(function(element) {
-    element.addEventListener.addEventListener("click", function(event) {
-    // Test to make sure we can CAPTURE the SELECTED DATASET
-    console.log("Selected: ", event.target)
-    console.log("This: ", this);
-    console.log("Item Id: ", this.dataset.id);
-    console.log("Item Id: ", this.getAttribute('data-id'));
-    
-    // tranverse the DOM elemtns to pull the wanted Data
-    
-    
-    // Create our own dataset (temp dataset)
-    let shirtData = {
-        pid: "",
-        thumb_image: "",
-        title: ""
-    }
-    
-    // 
+moveableImage.addEventListener('mousedown', function(event){
+    isDragging= true;
+
+    offsetX = event.clientX - moveableImage.getBoundingClientRect().left;
+    offsetX = event.clientY - moveableImage.getBoundingClientRect().top;
 });
 
-})
+document.addEventListener('mousemove', function(event){
+    if(isDragging){
+        moveableImage.style.left = (event.clientX - offsetX) + 'px';
+        moveableImage.style.top = (event.clientY - offsetY) + 'px';
+
+    }
+});
+
+document.addEventListener('mouseup', function(){
+    isDragging = false;
+    targetArea.appendChild(moveableImage);
+});
