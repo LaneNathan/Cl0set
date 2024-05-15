@@ -69,7 +69,7 @@ async function FetchForever21Data(search){
     const response = await axios.request(options);
 
 
-    console.log(response.data);
+   //console.log(response.data);
     return response.data;
 }
 
