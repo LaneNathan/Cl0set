@@ -51,6 +51,7 @@ router.get("/login", (req, res) => {
     return response.data;
 }*/
 
+
 async function FetchForever21Data(search){
     const options = {
       method: 'GET',
@@ -73,10 +74,21 @@ async function FetchForever21Data(search){
     return response.data;
 }
 
-router.get("/createoutfit", (req, res) => {
-   
-    res.render("createoutfit")
-})
+router.get("/createoutfit", async (req, res) => {
+
+  let search = 'mens-shirts'
+
+
+  try{
+    const forever21Data = await FetchForever21Data(search);
+    res.render("createoutfit", { forever21Data } )
+
+  }catch(error){
+
+console.error("Error fetching data:",error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 
 module.exports = router;
