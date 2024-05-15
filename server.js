@@ -41,6 +41,13 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+//possible way to fix the header type
+app.use((req, res, next) =>{
+  if(req.url.endsWith('.js')){
+    res.setHeader('Content-Type', 'text/javascript');
+  }
+  next();
+});
 
 app.use(routes);
 
