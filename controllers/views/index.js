@@ -15,7 +15,7 @@ let search = 'mens-shirts';
 
     
     //console.log('forever21Data', forever21Data.response.docs[0]);
-    console.log('21Data', forever21Data.response);
+    //console.log('21Data', forever21Data.response);
 
  // SEND the DATA in the CONTEXT OBJECT with the VIEW
     res.render("homepage", { forever21Data })
