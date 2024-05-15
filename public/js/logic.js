@@ -9,8 +9,10 @@ saveButton.addEventListener('click', function(event) {
         outfit:'',
         shirtId: pid,
         shirtImg: thumb_image,
-        pantsId: "",
-        pantsImg: ""
+        pantsId: '',
+        pantsImg: '',
+        shoesId:'',
+        shoesImg:''
     };
 
     // Save the data to local storage
