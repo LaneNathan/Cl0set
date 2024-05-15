@@ -1,12 +1,6 @@
-const { User } = require("../../models");
-const express = require('express');
-
 const router = require("express").Router();
 const axios = require('axios');
 const { response, query } = require("express");
-
-const app = express();
-const PORT = 3001;
 
 router.get("/", async (req, res) => {
 
@@ -33,14 +27,11 @@ let search = 'mens-shirts';
   }
 });
 
-    // let data = { title: "Bingo", username: "Bob" }
-    // res.render("homepage", { viewData: data })
 
-// Login route
-router.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    const user = User.find(u => req.body.username === username && req.body.password === password);
-    let signIn = false;
+router.get("/login", (req, res) => {
+   
+    res.render("login")
+});
 
  // make the API request for data in our ROUTE/CONTROLLER
 /*async function fetchAsosData(search){
@@ -86,28 +77,6 @@ router.get("/createoutfit", (req, res) => {
    
     res.render("createoutfit")
 })
-
-    if (user) {
-        res.status(200).json({ message: 'Login successful', user });
-        let signedIn = true;
-        console.log(signedIn);
-
-    } else {
-        res.status(401).json({ message: 'Invalid username or password' });
-    }
-});
-
-// Home route Do we need?
-router.get('/', (req, res) => {
-    res.send('Welcome to the home page');
-});
-
-app.use('/', router); // Using router in the application
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
 
 
 module.exports = router;
