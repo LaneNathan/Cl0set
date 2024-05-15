@@ -1,6 +1,6 @@
 const saveButton = document.getElementById('save-bttn');
-const addShirtButtonArray = document.querySelectorAll('.add-shirt');
-console.log(addShirtButtonArray)
+const moveableImage = document.getElementById('{{pid}}');
+const targetArea = document.getElementById('saveshirt');
 
 saveButton.addEventListener('click', function(event) {
     // Get the data you want to save (for example, from an input field)
