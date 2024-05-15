@@ -8,6 +8,12 @@ const sequelize = require('../config/connection');
 //   }
 // }
 
+const hashPassword =    async (password) => {
+  const salt = await bcrypt.genSalt(10);
+  return bcrypt.hash(password, salt);
+}
+
+
 class User extends Model {
     // Method to check if a password matches the hashed password stored in the database
     async isValidPassword(password) {
@@ -17,20 +23,13 @@ class User extends Model {
 
   }
 
-
-
-const hashPassword =    async (password) => {
-    const salt = await bcrypt.genSalt(10);
-    return bcrypt.hash(password, salt);
-  }
-
 User.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      type: DataTypes.UUID,
       primaryKey: true,
-      autoIncrement: true,
+      defaultValue: DataTypes.UUIDV4
+
     },
     name: {
       type: DataTypes.STRING,
@@ -50,6 +49,14 @@ User.init(
       validate: {
         len: [8],
       },
+      createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+    }
     },
   },
   {
