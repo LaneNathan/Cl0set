@@ -31,7 +31,7 @@ moveableImage.addEventListener('mousedown', function(event){
     isDragging= true;
 
     offsetX = event.clientX - moveableImage.getBoundingClientRect().left;
-    offsetX = event.clientY - moveableImage.getBoundingClientRect().top;
+    offsetY = event.clientY - moveableImage.getBoundingClientRect().top;
 });
 
 document.addEventListener('mousemove', function(event){
