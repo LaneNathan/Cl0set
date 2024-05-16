@@ -6,7 +6,7 @@ const axios = require('axios');
 const { response, query } = require("express");
 
 const app = express();
-const PORT = 3001;
+// const PORT = 3001;
 
 router.get("/", async (req, res) => {
 
@@ -104,9 +104,9 @@ router.get('/', (req, res) => {
 
 app.use('/', router); // Using router in the application
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
 
 
 
