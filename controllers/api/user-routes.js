@@ -1,6 +1,6 @@
-// const { Router } = require('express');
+const { Router } = require('express');
 // const { User } = require('../../models');
-// const userRoutes = Router();
+const userRoutes = Router();
 
 const router = require('express').Router();
 const { User } = require('../../models');
@@ -8,7 +8,7 @@ const { User } = require('../../models');
 //npm package to give each user a unique ID upon creation
 const { v4: uuidv4 } = require('uuid');
 
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 
 
