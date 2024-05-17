@@ -24,14 +24,14 @@ saveButton.addEventListener('click', function(event) {
 });
 
 //controls image dragging
-let isDragging = false;
+/*let isDragging = false;
 let offsetX, offsetY;
 
 moveableImage.addEventListener('mousedown', function(event){
     isDragging= true;
 
-    offsetX = event.clientX - moveableImage.getBoundingClientRect().left;
-    offsetY = event.clientY - moveableImage.getBoundingClientRect().top;
+    offsetX = event.clientX - event.target.getBoundingClientRect().left;
+    offsetY = event.clientY - event.target.getBoundingClientRect().top;
 });
 
 document.addEventListener('mousemove', function(event){
@@ -43,6 +43,7 @@ document.addEventListener('mousemove', function(event){
 });
 
 document.addEventListener('mouseup', function(){
+    if(isDragging){
     isDragging = false;
     targetArea.appendChild(moveableImage);
 });
