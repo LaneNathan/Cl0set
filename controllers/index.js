@@ -6,8 +6,9 @@ const apiRoutes = require('./api');
 
 
 
+
 router.use('/api', apiRoutes);
-router.use("/", viewsRoutes)
+router.use("/", viewsRoutes);
 
 
 
