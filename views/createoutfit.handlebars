@@ -1,5 +1,20 @@
-<div class="row d-flex justify-content-between">
+ 
 
+<div id="parent_of_all" class="row d-flex justify-content-between">
+
+    <nav class="container-fluid">
+        <div class="dropdown">
+            <button class="dropbtn">Upload Image</button>
+            <div class="dropdown-content">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <input type="file" id="fileInput" name="fileInput">
+                        <button type="submit">Upload</button>
+                    </form>
+            </div>
+        </div>
+    </nav>
+
+    
     <aside id="scrollPictures-left" class="col-2 overflow-auto scrollPictures">
         <!-- use different sizes lightbox from bootstrap for these images (https://mdbootstrap.com/docs/standard/components/lightbox/)
    if unavailable, use Mix&Match grid system (https://getbootstrap.com/docs/4.2/layout/grid/) -->
