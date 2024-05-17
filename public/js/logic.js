@@ -17,7 +17,7 @@ saveButton.addEventListener('click', function(event) {
     };
 
     // Save the data to local storage
-    localStorage.setItem('userData', JSON.stringify(data));
+    localStorage.setItem('userData', JSON.stringify(dataToSave));
 
     
     alert('Your outfit has been saved!');
