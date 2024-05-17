@@ -56,21 +56,26 @@
     <div class="col-2 overflow-auto scrollPictures">
         <!-- use different sizes lightbox from bootstrap for these images (https://mdbootstrap.com/docs/standard/components/lightbox/)
             if unavailable, use Mix&Match grid system (https://getbootstrap.com/docs/4.2/layout/grid/) -->
-       <ul>
-        {{#each forever21Data.response.docs}}
-        <li>
-            <div>{{title}}</div>
+    
+         
+        <ul id="scrollPictures-right" class="connectedSortable">
+            {{#each forever21Data.response.docs}}
+            
+            <li class="scroll-Pictures">
+                <div id="draggable">
+                    <div id="image-title">{{this.title}}</div>
 
-            <img id="{{pid}}" src="{{thumb_image}}" />
-        </li>
+                    <img id="{{this.pid}}" src="{{this.thumb_image}}" />
+                </div>
+            </li>
+            
         {{/each}}
        </ul>
-    </aside>
+         
+       
+    </div>
 
 
-    {{!-- <div class="test">
-        <h2>Title: {{ viewData.title }}</h2>
-    </div> --}}
 </div>
 
 
