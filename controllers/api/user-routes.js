@@ -1,6 +1,5 @@
-const { Router } = require('express');
+// const { Router } = require('express');
 // const { User } = require('../../models');
-const userRoutes = Router();
 
 const router = require('express').Router();
 const { User } = require('../../models');
@@ -14,7 +13,7 @@ const mysql = require('mysql2');
 
 //--------------------Create New User--------------------//
 
-userRoutes.post('/sign-up', async (req, res) => {
+router.post('/sign-up', async (req, res) => {
     // console.log('testing post sign up user');
     // console.log(req.body);
 
@@ -108,7 +107,6 @@ router.post('/login', async (req, res) => {
       res.status(404).end();
     }
   });
-  
 
 
 
@@ -123,6 +121,7 @@ router.post('/login', async (req, res) => {
 
 
 
-// module.exports = userRoutes
+
+// module.exports = router
 
 module.exports = router;
