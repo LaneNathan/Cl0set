@@ -63,14 +63,61 @@ nav {
   }
 }
 
-.scrollPictures {
-    z-index: 10;
-    height: 80vh;
-    overflow-y: auto;
-}
 
 #scrollPictures-left, #scrollPictures-right {
-    z-index: 10;
-    height: 80vh;
-    overflow-y: auto;
+  z-index: 10;
+  height: 65vh;
+  overflow-y: auto;
+}
+
+.dropdown{
+  display: inline-block;
+}
+.dropdown button{
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  box-shadow: 2px 2px 5px #000000;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown a:hover{
+display: inline;
+}
+
+#draggable { 
+    height: 29%;
+    margin: 0;
+}
+
+ul li{
+  margin: 10px;
+}
+.scrollPictures li{
+  margin: 0px;
+}
+
+#builder{
+  width: 20%;
+  margin: 3px 0px 24px 151px;
+}
+#builder-pants{
+  width: 20%;
+  margin: 3px 0px 24px 22%;
+}
+#builder-shoes{
+  width: 20%;
+  margin: 3px 0px 24px 27%;
+}
+.scroll-Pictures ui-sortable-handle{
+  touch-action: none;
+  width: -webkit-fill-available;
+
 }
