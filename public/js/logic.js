@@ -46,4 +46,58 @@ document.addEventListener('mouseup', function(){
     if(isDragging){
     isDragging = false;
     targetArea.appendChild(moveableImage);
-});
+    }
+});*/
+
+$( function() {
+
+    // console.log()
+    // $( ".scroll-Pictures").draggable({ revert: true, containment: "document"});
+    // $("#saveshirt").droppable({ snap: true})
+
+
+    $( "#builder").sortable({
+        containment: "document",
+        connectWith: ".connectedSortable",
+        receive: function(event, ui) {
+            if ($(this).children().length > 1) {
+                $(ui.sender).sortable('cancel');
+            }
+        }
+    }).disableSelection();
+
+
+    $( "#builder-pants").sortable({
+        containment: "document",
+        connectWith: ".connectedSortable",
+        receive: function(event, ui) {
+            if ($(this).children().length > 1) {
+                $(ui.sender).sortable('cancel');
+            }
+        },
+        receive: function(event, ui) {
+            if ($(ui.item).hasClass("scroll-Pictures ui-sortable-handle")) {
+                $(ui.sender).sortable('cancel');
+            }
+        }
+    }).disableSelection();
+    
+    $( "#builder-shoes").sortable({
+        containment: "document",
+        connectWith: ".connectedSortable", 
+        receive: function(event, ui) {
+            if ($(this).children().length > 1) {
+                $(ui.sender).sortable('cancel');
+            }
+        }
+    }).disableSelection();
+
+    $( "#scrollPictures-right").sortable({
+        containment: "document",
+        connectWith: ".connectedSortable",
+        revert: true,
+        
+    }).disableSelection();
+
+
+  } );
