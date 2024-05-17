@@ -8,8 +8,8 @@ saveButton.addEventListener('click', function(event) {
 
     const dataToSave = { 
         outfit:'',
-        shirtId: pid,
-        shirtImg: thumb_image,
+        shirtId: moveableImage.getAttribute('data-shirt-id'),
+        shirtImg: moveableImage.src,
         pantsId: '',
         pantsImg: '',
         shoesId:'',
