@@ -1,5 +1,5 @@
 const saveButton = document.getElementById('save-bttn');
-const moveableImage = document.getElementById('{{pid}}');
+const moveableImage = document.querySelector('.scroll-Pictures');
 const targetArea = document.getElementById('saveshirt');
 
 //save information from save button click as an object
