@@ -152,6 +152,7 @@ module.exports = router;
 }*/
 //---------------------------Original Position Nate-------------------//
 
+
 // async function FetchForever21Data(search){
 //     const options = {
 //       method: 'GET',
@@ -168,6 +169,7 @@ module.exports = router;
 //     };
 
 //     const response = await axios.request(options);
+
 
 
 //     console.log(response.data);
@@ -199,6 +201,7 @@ module.exports = router;
 // app.listen(PORT, () => {
 //     console.log(`Server is running on port ${PORT}`);
 // });
+
 
 
 

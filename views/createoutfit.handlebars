@@ -1,5 +1,20 @@
-<div class="row d-flex justify-content-between">
+ 
 
+<div id="parent_of_all" class="row d-flex justify-content-between">
+
+    <nav class="container-fluid">
+        <div class="dropdown">
+            <button class="dropbtn">Upload Image</button>
+            <div class="dropdown-content">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <input type="file" id="fileInput" name="fileInput">
+                        <button type="submit">Upload</button>
+                    </form>
+            </div>
+        </div>
+    </nav>
+
+    
     <aside id="scrollPictures-left" class="col-2 overflow-auto scrollPictures">
         <!-- use different sizes lightbox from bootstrap for these images (https://mdbootstrap.com/docs/standard/components/lightbox/)
    if unavailable, use Mix&Match grid system (https://getbootstrap.com/docs/4.2/layout/grid/) -->
@@ -15,28 +30,57 @@
     </aside>
 
     <!-- apply bootstrap mask to the carousel (https://mdbootstrap.com/docs/standard/content-styles/images/) -->
-    <div class="col-8">
+    <div  class="col-7 ">
+
         
+        <ul id="builder" class="connectedSortable" style="height: 38%;">Shirt:
+
+            
+        </ul>
+
+        
+        <ul id="builder-pants" class="connectedSortable" style="height: 211px; background-color: blue;">Pants:
+
+            
+        </ul>
+
+        
+        <ul id="builder-shoes" class="connectedSortable" style="height: 211px; background-color: red;">Shoes:
+
+            
+        </ul>
+        
+        <button id="save-bttn" type="button">Save Outfit</button>
     </div>
 
-    <aside  id="scrollPictures-right"  class="col-2 overflow-auto scrollPictures">
+    <div class="col-2 overflow-auto scrollPictures">
         <!-- use different sizes lightbox from bootstrap for these images (https://mdbootstrap.com/docs/standard/components/lightbox/)
             if unavailable, use Mix&Match grid system (https://getbootstrap.com/docs/4.2/layout/grid/) -->
-        <img style="max-width: 100%" src="/images/hangers/hanger1.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger2.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger3.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger4.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger5.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger6.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger7.png" class="clothingItem">
-        <img style="max-width: 100%" src="/images/hangers/hanger8.png" class="clothingItem">
-    </aside>
+    
+         
+        <ul id="scrollPictures-right" class="connectedSortable">
+            {{#each forever21Data.response.docs}}
+            
+            <li class="scroll-Pictures">
+                <div id="draggable">
+                    <div id="image-title">{{this.title}}</div>
+
+                    <img id="{{this.pid}}" src="{{this.thumb_image}}" />
+                </div>
+            </li>
+            
+        {{/each}}
+       </ul>
+         
+       
+    </div>
 
 
-    {{!-- <div class="test">
-        <h2>Title: {{ viewData.title }}</h2>
-    </div> --}}
 </div>
 
 
-<!--<script src="./js/dataFetch.js"></script> -->
+
+<script src="../js/logic.js"></script>
+
+
+
