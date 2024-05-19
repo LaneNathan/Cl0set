@@ -1,17 +1,48 @@
-<h1>This is the login page</h1>
-
-<form>
+<div class="container"></div>
+<div class="container d-flex justify-content-around">
+<form class="col-xs-6">
+  <h1>Login</h1>
+  <p>Login to an existing account</p>
   <div class="form-group">
-    <label for="InputUsername">Username</label>
+    <label for="InputUsername"><b>Username</b></label>
     <input type="username" class="form-control" id="InputUsername" aria-describedby="emailHelp" placeholder="Enter username">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword1"><b>Password</b></label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-    <aside id="scrollPictures-left" class="col-2 overflow-auto scrollPictures">
+    <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+    <aside id="scrollPictures-left" class=" overflow-auto scrollPictures">
        <a onclick="testClick()"><button id="openInstructions" type="button">Login</button></a>
     </aside>
 </form>
 
+<form class="col-xs-6" action="action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Create an account</p>
 
+     <div class="form-group">
+       <label for="email"><b>Email</b></label>
+       <input type="text" class="form-control" placeholder="Enter Email" name="email" required>
+     </div>
+
+     <div class="form-group">
+      <label for="psw"><b>Password</b></label>
+      <input type="password"class="form-control" placeholder="Enter Password" name="psw" required>
+     </div>
+     
+     <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+  
+      <div class="clearfix">
+        <aside  class="col-2 overflow-auto scrollPictures"></aside>
+        <a onclick=""><button id="openInstructions" type="submit" class="signupbtn">Sign Up</button></a>
+      </div>
+    </div>
+  </form>
+</div>
