@@ -63,6 +63,10 @@ $( function() {
             if ($(this).children().length > 1) {
                 $(ui.sender).sortable('cancel');
             }
+        }, receive: function(event, ui) {
+            if ($(ui.item).hasClass("scroll-Pictures-left ui-sortable-handle")) {
+                $(ui.sender).sortable('cancel');
+            }
         }
     }).disableSelection();
 
@@ -93,6 +97,12 @@ $( function() {
     }).disableSelection();
 
     $( "#scrollPictures-right").sortable({
+        containment: "document",
+        connectWith: ".connectedSortable",
+        revert: true,
+        
+    }).disableSelection();
+    $( "#scrollPictures-left").sortable({
         containment: "document",
         connectWith: ".connectedSortable",
         revert: true,
