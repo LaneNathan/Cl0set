@@ -12,6 +12,9 @@ nav {
     height: 20vh;
 }
 
+.menuButton {
+  margin: 10px;
+}
 
 #openInstructions {
   background-color: #3DD1E7;
