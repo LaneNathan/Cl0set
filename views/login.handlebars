@@ -1,7 +1,8 @@
 <div class="container"></div>
-<h1>login</h1>
-<div class="row d-flex justify-content-around">
-<form>
+<div class="container d-flex justify-content-around">
+<form class="col-xs-6">
+  <h1>Login</h1>
+  <p>Login to an existing account</p>
   <div class="form-group">
     <label for="InputUsername"><b>Username</b></label>
     <input type="username" class="form-control" id="InputUsername" aria-describedby="emailHelp" placeholder="Enter username">
@@ -19,7 +20,7 @@
     </aside>
 </form>
 
-<form action="action_page.php">
+<form class="col-xs-6" action="action_page.php">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Create an account</p>
@@ -39,8 +40,8 @@
       </label>
   
       <div class="clearfix">
-        <asideid="scrollPictures-left" class="col-2 overflow-auto scrollPictures"></aside>
-        <a onclick=""><button type="submit" class="signupbtn">Sign Up</button></a>
+        <aside  class="col-2 overflow-auto scrollPictures"></aside>
+        <a onclick=""><button id="openInstructions" type="submit" class="signupbtn">Sign Up</button></a>
       </div>
     </div>
   </form>
