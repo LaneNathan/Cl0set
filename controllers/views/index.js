@@ -79,11 +79,7 @@ router.post('/login', (req, res) => {
   // })
 
   router.get("/createoutfit", async (req, res) => {
-    res.render("createoutfit");
-
-
-
-
+    //res.render("createoutfit");
 
     let search = 'mens-shirts';
     
