@@ -32,9 +32,29 @@ async function FetchForever21Data(search){
 
   const response = await axios.request(options);
 
-  console.log(response.data);
+  //console.log(response.data);
   return response.data;
 };
+
+async function fetchAsosData(searchPants){
+    const options = {
+      method: 'GET',
+      url: 'https://asos2.p.rapidapi.com/products/v2/list',
+      params: {
+        q: searchPants,
+        limit: 10
+      },
+      headers: {
+        'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
+        'X-RapidAPI-Host': process.env.RAPIDAPI_HOST,
+      }
+    };
+
+    const response = await axios.request(options);
+
+    console.log(response.data)
+    return response.data;
+}
 
 //---------------------------Home Page Route-------------------//
 
