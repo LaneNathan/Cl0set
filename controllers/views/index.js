@@ -32,9 +32,29 @@ async function FetchForever21Data(search){
 
   const response = await axios.request(options);
 
-  console.log(response.data);
+  //console.log(response.data);
   return response.data;
 };
+
+async function fetchAsosData(searchPants){
+    const options = {
+      method: 'GET',
+      url: 'https://asos2.p.rapidapi.com/products/v2/list',
+      params: {
+        q: searchPants,
+        limit: 10
+      },
+      headers: {
+        'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
+        'X-RapidAPI-Host': process.env.RAPIDAPI_HOST,
+      }
+    };
+
+    const response = await axios.request(options);
+
+    console.log(response.data)
+    return response.data;
+}
 
 //---------------------------Home Page Route-------------------//
 
@@ -79,26 +99,24 @@ router.post('/login', (req, res) => {
   // })
 
   router.get("/createoutfit", async (req, res) => {
-    res.render("createoutfit");
-
-
-
-
+    //res.render("createoutfit");
 
     let search = 'mens-shirts';
+    let searchPants = 'mens-pants;'
     
     try{
 
       //parse that returned data (images, title)
-    //const asosData = await fetchAsosData(search);
-
       const forever21Data = await FetchForever21Data(search);
+      const asosData = await fetchAsosData(searchPants);
 
-      //console.log('forever21Data', forever21Data.response.docs[0]);
-      console.log('21Data', forever21Data.response);
+      
+
+      console.log('asosData is here', asosData.products);
+      //console.log('21Data', forever21Data.response);
 
     // SEND the DATA in the CONTEXT OBJECT with the VIEW
-      res.render("createoutfit", { forever21Data })
+      res.render("createoutfit", { forever21Data, asosData })
 
 
     }catch(error){
@@ -116,40 +134,8 @@ module.exports = router;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  // make the API request for data in our ROUTE/CONTROLLER
-/*async function fetchAsosData(search){
-    const options = {
-      method: 'GET',
-      url: 'https://asos-com1.p.rapidapi.com/products/search',
-      params: {
-        q: search
-      },
-      headers: {
-        'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-        'X-RapidAPI-Host': process.env.RAPIDAPI_HOST,
-      }
-    };
 
-    const response = await axios.request(options);
-    return response.data;
-}*/
 //---------------------------Original Position Nate-------------------//
 
 
