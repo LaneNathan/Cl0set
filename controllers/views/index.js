@@ -82,19 +82,21 @@ router.post('/login', (req, res) => {
     //res.render("createoutfit");
 
     let search = 'mens-shirts';
+    let searchPants = 'mens-pants;'
     
     try{
 
       //parse that returned data (images, title)
-    //const asosData = await fetchAsosData(search);
-
       const forever21Data = await FetchForever21Data(search);
+      const asosData = await fetchAsosData(searchPants);
 
-      //console.log('forever21Data', forever21Data.response.docs[0]);
-      console.log('21Data', forever21Data.response);
+      
+
+      console.log('asosData is here', asosData.products);
+      //console.log('21Data', forever21Data.response);
 
     // SEND the DATA in the CONTEXT OBJECT with the VIEW
-      res.render("createoutfit", { forever21Data })
+      res.render("createoutfit", { forever21Data, asosData })
 
 
     }catch(error){
