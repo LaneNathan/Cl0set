@@ -56,9 +56,6 @@ document.addEventListener('DOMContentLoaded', loadOutfits);
 
 $( function() {
 
-    // console.log()
-    // $( ".scroll-Pictures").draggable({ revert: true, containment: "document"});
-    // $("#saveshirt").droppable({ snap: true})
 
 
     $( "#builder").sortable({
