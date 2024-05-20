@@ -24,10 +24,10 @@ router.post('/sign-up', async (req, res) => {
             return;
         }
     
-        if (req.body.password !== req.body.confirmPassword) {
-            res.status(400).send('Passwords do not match!')
-            return;
-        }
+        // if (req.body.password !== req.body.confirmPassword) {
+        //     res.status(400).send('Passwords do not match!')
+        //     return;
+        // }
         
         const userId = uuidv4();
 
@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
     try {
       const dbUserData = await User.findOne({
         where: {
-          email: req.body.email,
+          name: req.body.name,
         },
       });
   
@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
         return;
       }
   
-      const validPassword = await dbUserData.checkPassword(req.body.password);
+      const validPassword = await dbUserData.isValidPassword(req.body.password);
   
       if (!validPassword) {
         res
