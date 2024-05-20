@@ -4,23 +4,20 @@ const targetArea = document.getElementById('saveshirt');
 
 //save information from save button click as an object
 saveButton.addEventListener('click', function(event) {
-    // Get the data you want to save (for example, from an input field)
 
-    const dataToSave = { 
-        outfit:'',
-        shirtId: moveableImage.getAttribute('data-shirt-id'),
-        shirtImg: moveableImage.src,
-        pantsId: '',
-        pantsImg: '',
-        shoesId:'',
-        shoesImg:''
+ // Outfit object
+    const outfit = { 
+        outfitnumber:'',
+        shirts: [],
+        pants: [],
+        shoes: [],
     };
+//pushes data from divs to the outfit object
+    outfit.shirts.push(...extractData('builder'));
+    outfit.pants.push(...extractData('builder-pants'));
+    outfit.shirts.push(...extractData('builder-shoes'));
 
-    // Save the data to local storage
-    localStorage.setItem('userData', JSON.stringify(dataToSave));
-
-    
-    alert('Your outfit has been saved!');
+    console.log('Your outfit is saved',outfit);
 });
 
 //controls image dragging
