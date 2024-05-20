@@ -19,32 +19,40 @@ saveButton.addEventListener('click', function(event) {
 
     console.log('Your outfit is saved',outfit);
 });
+//takes the id, image source and title from each section and creates an object to be pushed into the items array
+function extractData(ulId) {
+    const ul = document.getElementById(ulId);
+    const lis = ul.getElementsByTagName('li');
+    const items = [];
 
-//controls image dragging
-/*let isDragging = false;
-let offsetX, offsetY;
-
-moveableImage.addEventListener('mousedown', function(event){
-    isDragging= true;
-
-    offsetX = event.clientX - event.target.getBoundingClientRect().left;
-    offsetY = event.clientY - event.target.getBoundingClientRect().top;
-});
-
-document.addEventListener('mousemove', function(event){
-    if(isDragging){
-        moveableImage.style.left = (event.clientX - offsetX) + 'px';
-        moveableImage.style.top = (event.clientY - offsetY) + 'px';
-
+for (let li of lis) {
+    const img = li.querySelector('img');
+    const divTitle = li.querySelector('div').innerText;
+    if(img) {
+        items.push({
+            id: img.id,
+            src: img.src,
+            title: divTitle
+        });
     }
-});
-
-document.addEventListener('mouseup', function(){
-    if(isDragging){
-    isDragging = false;
-    targetArea.appendChild(moveableImage);
-    }
-});*/
+}
+console.log(items);
+return items;
+}
+// saves each outfit object by pushing that data into the outfits array
+function saveOutfit(outfit) {
+    let outfits = JSON.parse(localStorage.getItem('outfits')) || [];
+    outfits.push(outfit);
+    localStorage.setItem('outfits', JSON.stringify(outfits));
+    console.log('Outfit saved to local storage', outfits);
+}
+//loads the outfits by array
+function loadOutfits() {
+    const outfits = JSON.parse(localStorage.getItem('outfits')) || [];
+    console.log('Loaded outfits from local storage', outfits);
+}
+//loads the saved outfits once the page has loaded
+document.addEventListener('DOMContentLoaded', loadOutfits);
 
 $( function() {
 
