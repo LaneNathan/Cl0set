@@ -2,6 +2,51 @@ const saveButton = document.getElementById('save-bttn');
 const moveableImage = document.querySelector('.scroll-Pictures');
 const targetArea = document.getElementById('saveshirt');
 
+
+document.getElementById('uploadButton').addEventListener('click', function(event){
+    const fileInput = document.getElementById('fileInput');
+    const imageTitle = document.getElementById('imageTitle').value;
+    const files =fileInput.files;
+
+    if(files.length > 0 && imageTitle.trim()){
+        Array.from(files).forEach(file =>{
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const imageSrc = event.target.result;
+                addImageToList('scrollPictures-bottom', imageSrc,imageTitle, file.name);
+            };
+            reader.readAsDataURL(file);
+        });
+    }else{
+        alert('Please select a file and enter a title');
+    }
+});
+
+function addImageToList(ulId, imageSrc, imageTitle, imageId){
+    const ul = document.getElementById(ulId);
+            const li = document.createElement('li');
+            const div = document.createElement('div');
+            div.id = 'draggable';
+
+            const a = document.createElement('a');
+            a.href = '#';
+
+            const divTitle = document.createElement('div');
+            divTitle.id = 'image-title';
+            divTitle.innerText = imageTitle;
+
+            const img = document.createElement('img');
+            img.id = imageId;
+            img.src = imageSrc;
+            img.alt = imageTitle;
+
+            a.appendChild(divTitle);
+            a.appendChild(img);
+            div.appendChild(a);
+            li.appendChild(div);
+            ul.appendChild(li);
+        }
+
 //save information from save button click as an object
 saveButton.addEventListener('click', function(event) {
 
@@ -36,7 +81,7 @@ for (let li of lis) {
         });
     }
 }
-console.log(items);
+//console.log(items);
 return items;
 }
 // saves each outfit object by pushing that data into the outfits array
@@ -104,7 +149,15 @@ $( function() {
         revert: true,
         
     }).disableSelection();
+    
     $( "#scrollPictures-left").sortable({
+        containment: "document",
+        connectWith: ".connectedSortable",
+        revert: true,
+        
+    }).disableSelection();
+    
+    $( "#scrollPictures-bottom").sortable({
         containment: "document",
         connectWith: ".connectedSortable",
         revert: true,

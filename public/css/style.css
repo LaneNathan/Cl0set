@@ -70,10 +70,13 @@ nav {
   z-index: 10;
   height: 65vh;
   overflow-y: auto;
+  width: 82%;
+  background-image: linear-gradient(45deg, black, transparent);
 }
 
 .dropdown{
   display: inline-block;
+  padding-left: 18%;
 }
 .dropdown button{
   background-color: antiquewhite;
@@ -84,6 +87,8 @@ nav {
   display: none;
   position: absolute;
   box-shadow: 2px 2px 5px #000000;
+  z-index: 1000;
+  background: color(display-p3 0.94 0.75 0.23);
 }
 
 .dropdown:hover .dropdown-content{
@@ -106,23 +111,61 @@ ul li{
   margin: 0px;
 }
 
+#builder, #builder-pants, #builder-shoes{
+  background-image: linear-gradient(to bottom, black, transparent);
+  
+}
 #builder{
-  width: 20%;
-  margin: 3px 0px 24px 151px;
+  width: 26%;
+  margin: 3px 0px 24px 5%;
 }
 #builder-pants{
-  width: 20%;
-  margin: 3px 0px 24px 22%;
+  width: 26%;
+    margin: 3px 0px 24px 13%;
 }
 #builder-shoes{
-  width: 20%;
-  margin: 3px 0px 24px 27%;
+  width: 26%;
+    margin: 3px 0px 24px 17%;
 }
 .scroll-Pictures ui-sortable-handle{
   touch-action: none;
   width: -webkit-fill-available;
 
 }
-.scroll-Pictures-left{
-  
+#scrollPictures-bottom{
+  height: 26%;
+  width: 100%;
+  margin-top: 12%;
+  list-style: none;
+  display: inline-flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#scrollPictures-bottom.li{
+  display: inline;
+
+}
+
+a {
+  text-decoration: none;
+  color: #bdbdbd;
+  font-family: emoji;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.headers{
+  background-color: #00000000;
+  color: #E5E7EB;
+  font-family: cursive;
+}
+
+#image-title{
+  width: inherit;
+    margin-bottom: 4px;
+    background-image: linear-gradient(45deg, black, transparent);
+    font-size: 15px;
+    margin-top: 13px;
 }

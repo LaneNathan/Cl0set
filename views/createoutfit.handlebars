@@ -7,8 +7,9 @@
             <button class="dropbtn">Upload Image</button>
             <div class="dropdown-content">
                     <form id="uploadForm" enctype="multipart/form-data">
-                        <input type="file" id="fileInput" name="fileInput">
-                        <button type="submit">Upload</button>
+                        <input type="file" id="fileInput" name="fileInput" multiple>
+                        <input type ="text" id="imageTitle" placeholder="Enter the image name">
+                        <button type="button" id="uploadButton">Upload</button>
                     </form>
             </div>
         </div>
@@ -40,25 +41,29 @@
         <div id="outfitcontainer" class= "container d-flex justify-content-around">
 
         
-        <ul id="builder" class="connectedSortable" style="height: 211px;">Shirt:
+        <ul id="builder" class="connectedSortable" style="height: 211px;"><p class="headers">Shirts:</p>
 
             
         </ul>
 
         
-        <ul id="builder-pants" class="connectedSortable" style="height: 211px; background-color: blue;">Pants:
+        <ul id="builder-pants" class="connectedSortable" style="height: 211px;"><p class="headers">Pants:</p>
 
             
         </ul>
 
         
-        <ul id="builder-shoes" class="connectedSortable" style="height: 211px; background-color: red;">Shoes:
+        <ul id="builder-shoes" class="connectedSortable" style="height: 211px;"><p class="headers">Shoes:</p>
 
             
         </ul>
         </div>
         
         <button id="save-bttn" clas="mx-auto" type="button">Save Outfit</button>
+
+        <ul id="scrollPictures-bottom" class="connectedSortable">
+
+        </ul>
     </div>
 
     <div class="col-2 overflow-auto scrollPictures">
