@@ -1,43 +1,43 @@
 <div class="container"></div>
 <div class="container d-flex justify-content-around">
-<form class="col-xs-6">
+<form id="loginForm" class="col-xs-6">
   <h1>Login</h1>
   <p>Login to an existing account</p>
   <div class="form-group">
     <label for="InputUsername"><b>Username</b></label>
-    <input type="username" class="form-control" id="InputUsername" aria-describedby="emailHelp" placeholder="Enter username">
+    <input type="username" class="form-control" id="name-login" aria-describedby="emailHelp" placeholder="Enter username">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1"><b>Password</b></label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" class="form-control" id="password-login" placeholder="Password">
   </div>
     <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
 
     <aside id="scrollPictures-left" class=" overflow-auto scrollPictures">
-       <a onclick="testClick()"><button id="openInstructions" type="button">Login</button></a>
+      <button id="openInstructions" type="submit">Login</button>
     </aside>
 </form>
 
-<form class="col-xs-6" action="action_page.php">
+<form id="signUpForm" class="col-xs-6">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Create an account</p>
 
      <div class="form-group">
        <label for="name"><b>Username</b></label>
-       <input type="text" class="form-control" placeholder="Enter Username" name="name" required>
+       <input type="text" class="form-control" placeholder="Enter Username" id="name" name="name" required>
      </div>
 
      <div class="form-group">
        <label for="email"><b>Email</b></label>
-       <input type="text" class="form-control" placeholder="Enter Email" name="email" required>
+       <input type="text" class="form-control" placeholder="Enter Email" id="email" name="email" required>
      </div>
 
      <div class="form-group">
       <label for="psw"><b>Password</b></label>
-      <input type="password"class="form-control" placeholder="Enter Password" name="psw" required>
+      <input type="password"class="form-control" placeholder="Enter Password" id="password" name="psw" required>
      </div>
      
      <label>
@@ -50,4 +50,5 @@
       </div>
     </div>
   </form>
+  <script src="/js/login.js"></script>
 </div>
